@@ -3,6 +3,8 @@
 var gulp = require('gulp');
 var wrench = require('wrench');
 
+var Promise = require('es6-promise').Promise;
+
 /**
  *  This will load all js or coffee files in the gulp directory
  *  in order to load all gulp tasks
