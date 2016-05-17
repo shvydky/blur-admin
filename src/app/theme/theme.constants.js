@@ -7,67 +7,7 @@
 
   var IMAGES_ROOT = 'assets/img/';
 
-  // main color scheme
-  var colorScheme = {
-    primary: '#209e91',
-    info: '#2dacd1',
-    success: '#90b900',
-    warning: '#dfb81c',
-    danger: '#e85656',
-  };
-
-  // background color palette
-  var bgColorPalette = {
-    blueStone: '#005562',
-    surfieGreen: '#0e8174',
-    silverTree: '#6eba8c',
-    gossip: '#b9f2a1',
-    white: '#ffffff',
-  };
-
   angular.module('BlurAdmin.theme')
-    .constant('layoutColors', {
-      primary: colorScheme.primary,
-      info: colorScheme.info,
-      success: colorScheme.success,
-      warning: colorScheme.warning,
-      danger: colorScheme.danger,
-
-      primaryLight: tint(colorScheme.primary, 30),
-      infoLight: tint(colorScheme.info, 30),
-      successLight: tint(colorScheme.success, 30),
-      warningLight: tint(colorScheme.warning, 30),
-      dangerLight: tint(colorScheme.danger, 30),
-
-      primaryDark: shade(colorScheme.primary, 15),
-      infoDark: shade(colorScheme.info, 15),
-      successDark: shade(colorScheme.success, 15),
-      warningDark: shade(colorScheme.warning, 15),
-      dangerDark: shade(colorScheme.danger, 15),
-
-      primaryBg: tint(colorScheme.primary, 20),
-      infoBg: tint(colorScheme.info, 20),
-      successBg: tint(colorScheme.success, 20),
-      warningBg: tint(colorScheme.warning, 20),
-      dangerBg: tint(colorScheme.danger, 20),
-
-      default: '#ffffff',
-      defaultText: '#ffffff',
-
-      bgColorPalette: {
-        blueStone: bgColorPalette.blueStone,
-        surfieGreen: bgColorPalette.surfieGreen,
-        silverTree: bgColorPalette.silverTree,
-        gossip: bgColorPalette.gossip,
-        white: bgColorPalette.white,
-
-        blueStoneDark: shade(bgColorPalette.blueStone, 15),
-        surfieGreenDark: shade(bgColorPalette.surfieGreen, 15),
-        silverTreeDark: shade(bgColorPalette.silverTree, 15),
-        gossipDark: shade(bgColorPalette.gossip, 15),
-        whiteDark: shade(bgColorPalette.white, 5),
-      },
-    })
     .constant('layoutSizes', {
       resWidthCollapseSidebar: 1200,
       resWidthHideSidebar: 500
@@ -79,6 +19,14 @@
         amMap: 'assets/img/theme/vendor/ammap//dist/ammap/images/',
         amChart: 'assets/img/theme/vendor/amcharts/dist/amcharts/images/'
       }
+    })
+    .constant('colorHelper', {
+      tint: function(color, weight) {
+        return mix('#ffffff', color, weight);
+      },
+      shade: function(color, weight) {
+        return mix('#000000', color, weight);
+      },
     });
 
   function shade(color, weight) {

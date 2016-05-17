@@ -9,11 +9,14 @@
       .controller('FunnelChartCtrl', FunnelChartCtrl);
 
   /** @ngInject */
-  function FunnelChartCtrl($scope, $element, tplSkinChartWatcherHelper, layoutPaths) {
+  function FunnelChartCtrl($scope, $element, layoutPaths, baConfig) {
+    var layoutColors = baConfig.colors;
     var id = $element[0].getAttribute('id');
     var funnelChart = AmCharts.makeChart(id, {
       type: 'funnel',
       theme: 'blur',
+      color: layoutColors.defaultText,
+      labelTickColor: layoutColors.borderDark,
       dataProvider: [
         {
           title: 'Website visits',
@@ -63,8 +66,5 @@
       creditsPosition: 'bottom-left',
       pathToImages: layoutPaths
     });
-
-    tplSkinChartWatcherHelper.watchFunnelChanges($scope, funnelChart);
   }
-
 })();

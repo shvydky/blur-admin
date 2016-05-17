@@ -12,21 +12,15 @@
       .directive('baPanel', baPanel);
 
   /** @ngInject */
-  function baPanel(baPanel, $document, $window, tplSkinManager) {
+  function baPanel(baPanel, baConfig) {
     return angular.extend({}, baPanel, {
-      link: function($scope){
-        $scope.panelType = tplSkinManager.getActiveSkin().panelType;
-        $scope.$on('tplSkinChanged', function(){
-          $scope.panelType = tplSkinManager.getActiveSkin().panelType;
-        });
-      },
       template: function(el, attrs) {
-        var res = '<div  class="panel {{panelType}} full-invisible ' + (attrs.baPanelClass || '') + '" zoom-in ba-panel-blur>';
+        var res = '<div  class="panel ' + (baConfig.theme.blur ? 'panel-blur' : '') + ' full-invisible ' + (attrs.baPanelClass || '');
+        res += '" zoom-in ' + (baConfig.theme.blur ? 'ba-panel-blur' : '') + '>';
         res += baPanel.template(el, attrs);
         res += '</div>';
         return res;
       }
     });
   }
-
 })();

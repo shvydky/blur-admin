@@ -9,44 +9,46 @@
       .controller('TrafficChartCtrl', TrafficChartCtrl);
 
   /** @ngInject */
-  function TrafficChartCtrl(layoutColors, $scope) {
-    var palette = layoutColors.bgColorPalette;
+  function TrafficChartCtrl($scope, baConfig, colorHelper) {
+
+    $scope.transparent = baConfig.theme.blur;
+    var dashboardColors = baConfig.colors.dashboard;
     $scope.doughnutData = [
       {
         value: 2000,
-        color: palette.white,
-        highlight: palette.whiteDark,
-        label: 'Ad Campaigns',
+        color: dashboardColors.white,
+        highlight: colorHelper.shade(dashboardColors.white, 15),
+        label: 'Other',
         percentage: 87,
-        order: 0,
+        order: 1,
       }, {
         value: 1500,
-        color: palette.blueStone,
-        highlight: palette.blueStoneDark,
+        color: dashboardColors.blueStone,
+        highlight: colorHelper.shade(dashboardColors.blueStone, 15),
         label: 'Search engines',
         percentage: 22,
         order: 4,
       }, {
         value: 1000,
-        color: palette.surfieGreen,
-        highlight: palette.surfieGreenDark,
+        color: dashboardColors.surfieGreen,
+        highlight: colorHelper.shade(dashboardColors.surfieGreen, 15),
         label: 'Referral Traffic',
         percentage: 70,
         order: 3,
       }, {
         value: 1200,
-        color: palette.silverTree,
-        highlight: palette.silverTreeDark,
+        color: dashboardColors.silverTree,
+        highlight: colorHelper.shade(dashboardColors.silverTree, 15),
         label: 'Direct Traffic',
         percentage: 38,
         order: 2,
       }, {
         value: 400,
-        color: palette.gossip,
-        highlight: palette.gossipDark,
-        label: 'Other',
+        color: dashboardColors.gossip,
+        highlight: colorHelper.shade(dashboardColors.gossip, 15),
+        label: 'Ad Campaigns',
         percentage: 17,
-        order: 1,
+        order: 0,
       },
     ];
 

@@ -9,7 +9,8 @@
       .controller('DashboardMapCtrl', DashboardMapCtrl);
 
   /** @ngInject */
-  function DashboardMapCtrl(layoutColors, layoutPaths) {
+  function DashboardMapCtrl(baConfig, layoutPaths) {
+    var layoutColors = baConfig.colors;
     var map = AmCharts.makeChart('amChartMap', {
       type: 'map',
       theme: 'blur',
@@ -53,10 +54,11 @@
       },
 
       areasSettings: {
-        rollOverOutlineColor: '#FFFFFF',
+        rollOverOutlineColor: layoutColors.border,
         rollOverColor: layoutColors.primaryDark,
         alpha: 0.8,
-        unlistedAreasAlpha: 0.1,
+        unlistedAreasAlpha: 0.2,
+        unlistedAreasColor: layoutColors.defaultText,
         balloonText: '[[title]]: [[customData]] users'
       },
 
@@ -66,9 +68,9 @@
         marginRight: 27,
         marginLeft: 27,
         equalWidths: false,
-        backgroundAlpha: 0.5,
-        backgroundColor: '#FFFFFF',
-        borderColor: '#ffffff',
+        backgroundAlpha: 0.3,
+        backgroundColor: layoutColors.border,
+        borderColor: layoutColors.border,
         borderAlpha: 1,
         top: 362,
         left: 0,

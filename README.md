@@ -1,31 +1,23 @@
-# Blur Admin HTML template
+# BlurAdmin Angular admin panel front-end framework
 
-Admin template made with ♥ by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get latest news about this template first!
+Customizable admin panel framework made with :heart: by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get latest news about this template first!
 
-We put a lot of efforts to bring together latest and the most trending web design approaches, while creating this template.
-Every color, character or image was carefully selected by our team to provide the best experience possible.
-We're very proud of it and like it very much. We also hope that you will enjoy it as well.
+### Demo
+**[Mint version demo](http://akveo.com/blur-admin-mint/)**             |  **[Blur version demo](http://akveo.com/blur-admin/)**
+:-------------------------:|:-------------------------:
+![Mint version demo](http://i.imgur.com/A3TMviJ.png)  |  ![Blur version demo](http://i.imgur.com/EAoiK2O.jpg)
 
-It's just a first version, but we will continue development of this template to create not just another bootstrap customization, but the whole HTML framework that can be applied in a lot of places.
+### Documentation
+Installation, customization and other useful articles: https://akveo.github.io/blur-admin/
 
-## Theme Demo
-![alt tag](http://i.imgur.com/yOZPlps.jpg)
-**[Template Demo](http://akveo.com/blur-admin/#/dashboard)**
+## How can I support developers?
+- Star our GitHub repo
+- Create pull requests, submit bugs, suggest new features or documentation updates
+- Follow us on [Twitter](https://twitter.com/akveo_inc)
+- Like our page on [Facebook](https://www.facebook.com/akveo/)
 
-## Getting Started
-
-### Installation
-* Install [git](https://git-scm.com/) and clone the repository `git clone https://github.com/akveo/blur-admin.git`
-* Download and install nodejs [https://nodejs.org](https://nodejs.org)
-* Open the console inside of the cloned folder and run `npm install` to fetch all dependencies
-
-### Development
-To run the template in the development mode use `gulp serve`. This will start a local build-in server on your machine bind to [http://localhost:3000](http://localhost:3000) address.
-
-### Production
-In case if you just need the template ready for production usage run `gulp` command. This will create a `release\` folder with freshly built files.
-
-Enjoy the beauty!
+## Can I hire you guys?
+Yes! We are available for hire. Visit [our homepage](http://akveo.com/) or simply leave us a note to contact@akveo.com. We will be happy to work with you!
 
 ## Features
 * Responsive layout
@@ -35,7 +27,6 @@ Enjoy the beauty!
 * Gulp build
 * AngularJS
 * Jquery
-* Jquery ui
 * Charts (amChart, Chartist, Chart.js, Morris)
 * Maps (Google, Leaflet, amMap)
 * etc
@@ -47,5 +38,4 @@ License
 ### From akveo
 
 Enjoy!
-
-Made with ♥ by [Akveo team](http://akveo.com/).
+We're always happy to hear your feedback.

@@ -9,18 +9,19 @@
     .controller('combinedChartCtrl', combinedChartCtrl);
 
   /** @ngInject */
-  function combinedChartCtrl($element, layoutColors, layoutPaths) {
+  function combinedChartCtrl($element, baConfig, layoutPaths) {
+    var layoutColors = baConfig.colors;
     var id = $element[0].getAttribute('id');
     var chart = AmCharts.makeChart(id, {
       "type": "serial",
       "theme": "none",
-      "color": layoutColors.default,
+      "color": layoutColors.defaultText,
       "dataDateFormat": "YYYY-MM-DD",
       "precision": 2,
       "valueAxes": [{
-        color: layoutColors.default,
-        axisColor: layoutColors.default,
-        gridColor: layoutColors.default,
+        color: layoutColors.defaultText,
+        axisColor: layoutColors.defaultText,
+        gridColor: layoutColors.defaultText,
         "id": "v1",
         "title": "Sales",
         "position": "left",
@@ -29,9 +30,9 @@
           return "$" + Math.round(value) + "M";
         }
       }, {
-        color: layoutColors.default,
-        axisColor: layoutColors.default,
-        gridColor: layoutColors.default,
+        color: layoutColors.defaultText,
+        axisColor: layoutColors.defaultText,
+        gridColor: layoutColors.defaultText,
         "id": "v2",
         "title": "Market Days",
         "gridAlpha": 0,
@@ -40,7 +41,7 @@
       }],
       "graphs": [{
         "id": "g3",
-        color: layoutColors.default,
+        color: layoutColors.defaultText,
         "valueAxis": "v1",
         "lineColor": layoutColors.primaryLight,
         "fillColors": layoutColors.primaryLight,
@@ -51,13 +52,13 @@
         "valueField": "sales2",
         "clustered": false,
         "columnWidth": 0.5,
-        "lineColorField" : "#ffffff",
+        "lineColorField" : layoutColors.defaultText,
         "legendValueText": "$[[value]]M",
         "balloonText": "[[title]]<br/><b style='font-size: 130%'>$[[value]]M</b>"
       }, {
         "id": "g4",
         "valueAxis": "v1",
-        color: layoutColors.default,
+        color: layoutColors.defaultText,
         "lineColor": layoutColors.primary,
         "fillColors": layoutColors.primary,
         "fillAlphas": 0.9,
@@ -74,8 +75,8 @@
         "valueAxis": "v2",
         "bullet": "round",
         "bulletBorderAlpha": 1,
-        "bulletColor": "#FFFFFF",
-        color: layoutColors.default,
+        "bulletColor": layoutColors.defaultText,
+        color: layoutColors.defaultText,
         "bulletSize": 5,
         "hideBulletsCount": 50,
         "lineThickness": 2,
@@ -88,10 +89,10 @@
       }, {
         "id": "g2",
         "valueAxis": "v2",
-        color: layoutColors.default,
+        color: layoutColors.defaultText,
         "bullet": "round",
         "bulletBorderAlpha": 1,
-        "bulletColor": "#FFFFFF",
+        "bulletColor": layoutColors.defaultText,
         "bulletSize": 5,
         "hideBulletsCount": 50,
         "lineThickness": 2,
@@ -107,16 +108,18 @@
         "graph": "g1",
         "oppositeAxis": false,
         "offset": 30,
-        "scrollbarHeight": 50,
-        "backgroundAlpha": 0,
-        "selectedBackgroundAlpha": 0.1,
-        "selectedBackgroundColor": "#888888",
-        "graphFillAlpha": 0,
-        "graphLineAlpha": 0.5,
-        "selectedGraphFillAlpha": 0,
-        "selectedGraphLineAlpha": 1,
-        "autoGridCount": true,
-        "color": "#AAAAAA"
+        gridAlpha: 0,
+        color: layoutColors.defaultText,
+        scrollbarHeight: 50,
+        backgroundAlpha: 0,
+        selectedBackgroundAlpha: 0.05,
+        selectedBackgroundColor: layoutColors.defaultText,
+        graphFillAlpha: 0,
+        autoGridCount: true,
+        selectedGraphFillAlpha: 0,
+        graphLineAlpha: 0.2,
+        selectedGraphLineColor: layoutColors.defaultText,
+        selectedGraphLineAlpha: 1
       },
       "chartCursor": {
         "pan": true,
@@ -128,9 +131,9 @@
       },
       "categoryField": "date",
       "categoryAxis": {
-        "axisColor": "#fff",
-        "color": "#fff",
-        "gridColor": "#fff",
+        "axisColor": layoutColors.defaultText,
+        "color": layoutColors.defaultText,
+        "gridColor": layoutColors.defaultText,
         "parseDates": true,
         "dashLength": 1,
         "minorGridEnabled": true
@@ -138,7 +141,7 @@
       "legend": {
         "useGraphSettings": true,
         "position": "top",
-        "color": "#fff"
+        "color": layoutColors.defaultText
       },
       "balloon": {
         "borderThickness": 1,
