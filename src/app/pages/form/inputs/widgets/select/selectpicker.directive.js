@@ -23,6 +23,10 @@
             elem.selectpicker('refresh');
           }
 
+          if (attrs.ngRefreshOn) {
+            scope.$watch(attrs.ngRefreshOn, refresh);
+          }
+
           if (attrs.ngModel) {
             scope.$watch(attrs.ngModel, refresh);
           }
